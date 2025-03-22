@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://scf0equtegte"]
+
+[ext_resource type="Script" uid="uid://dcfap2i1t8nai" path="res://Scripts/Player_Controller.gd" id="1_88kja"]
+[ext_resource type="Texture2D" uid="uid://dvsu6c2i6ky3l" path="res://icon.svg" id="2_it8n0"]
+[ext_resource type="Script" uid="uid://c8ndc5a3u068h" path="res://Scenes/player_fsm.gd" id="3_it8n0"]
+[ext_resource type="Script" uid="uid://drh0igj77e56j" path="res://Scripts/move.gd" id="4_gbyq6"]
+[ext_resource type="Script" uid="uid://dlkvk8h3lh458" path="res://Scripts/jump.gd" id="5_pbq55"]
+[ext_resource type="Script" uid="uid://bjjb217xlf5hl" path="res://Scripts/airborne.gd" id="6_t38ji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbyq6"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_88kja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_it8n0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_gbyq6")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_it8n0")
+initial_state = NodePath("move")
+
+[node name="move" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("4_gbyq6")
+
+[node name="jump" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("5_pbq55")
+
+[node name="airborne" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("6_t38ji")
