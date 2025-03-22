@@ -1,8 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxo85febrh86b"]
+[gd_scene load_steps=3 format=3 uid="uid://dxo85febrh86b"]
 
-[ext_resource type="Texture2D" uid="uid://dvsu6c2i6ky3l" path="res://icon.svg" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://scf0equtegte" path="res://Scenes/character_body_2d.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://dhru3u10usqsu" path="res://Scenes/ground.tscn" id="2_r0du0"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_glv2v")
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_uu6xs")]
+position = Vector2(571, 238)
+speed = 1000.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.3, 0.3)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="Ground" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(475, 900)
+rotation = -0.151266
+scale = Vector2(14.9773, 3.78115)
+
+[node name="Ground5" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(9977, 1233)
+rotation = -0.151266
+scale = Vector2(14.9773, 3.78115)
+
+[node name="Ground2" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(1293, 661)
+rotation = 0.343505
+scale = Vector2(14.9773, 3.78115)
+
+[node name="Ground3" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(5085, 1039)
+rotation = 0.199351
+scale = Vector2(17.4022, 3.72466)
+
+[node name="Ground4" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(5085, 1039)
+rotation = 0.199351
+scale = Vector2(15.3714, 4.11372)
