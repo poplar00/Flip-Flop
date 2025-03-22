@@ -10,3 +10,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity += get_gravity() * delta
 	
+	if position.y > 3000:
+		IS_ALIVE = false
