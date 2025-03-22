@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjt5p8xdfnlku"]
+
+[ext_resource type="Texture2D" uid="uid://c7eggjbu2xaiy" path="res://asset/Background.png" id="1_c8m3x"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+autoscroll = Vector2(-0.5, 0)
+
+[node name="BG" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("1_c8m3x")
+centered = false
