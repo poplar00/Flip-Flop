@@ -11,11 +11,15 @@ config_version=5
 [application]
 
 config/name="Flip-Flop"
-run/main_scene="uid://cc11gjvoptuef"
+run/main_scene="uid://5f174wfsd2wl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.294118, 0.203922, 0.266667, 1)
 boot_splash/image="uid://7qgm680on14v"
 config/icon="uid://dgrcgvorpour6"
+
+[autoload]
+
+GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
 
 [dotnet]
 
