@@ -1,5 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://scf0equtegte"]
-
+[gd_scene load_steps=30 format=3 uid="uid://scf0equtegte"]
 
 [ext_resource type="Script" uid="uid://dcfap2i1t8nai" path="res://Scripts/Player_Controller.gd" id="1_88kja"]
 [ext_resource type="Texture2D" uid="uid://dhascj4iu3y6k" path="res://asset/Purple Main.png" id="2_t38ji"]
