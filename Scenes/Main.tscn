@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://be1g3vkge11e"]
+[gd_scene load_steps=12 format=3 uid="uid://be1g3vkge11e"]
 
 [ext_resource type="PackedScene" uid="uid://scf0equtegte" path="res://Scenes/character_body_2d.tscn" id="1_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://n0vvobsip13s" path="res://Scenes/terrain.tscn" id="2_v1gob"]
 [ext_resource type="Texture2D" uid="uid://c7eggjbu2xaiy" path="res://asset/Background.png" id="3_jw32o"]
 [ext_resource type="Script" uid="uid://q2qjyrjj35rp" path="res://Scripts/canvas_layer.gd" id="4_50glp"]
+[ext_resource type="FontFile" uid="uid://t4ns4bp1h0he" path="res://asset/PixelOperator8-Bold.ttf" id="5_50glp"]
 [ext_resource type="Script" uid="uid://c0nfevxlmy45q" path="res://Scripts/control.gd" id="5_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://bxigukd16ak7u" path="res://asset/retry_butt.png" id="6_vy5pj"]
+[ext_resource type="FontFile" uid="uid://bd8dd80apwhpu" path="res://asset/PixelOperator8.ttf" id="8_bmxlf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kpch"]
+texture = ExtResource("6_vy5pj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grg3l"]
+texture = ExtResource("6_vy5pj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frkhe"]
+texture = ExtResource("6_vy5pj")
 
 [node name="Main" type="Node2D"]
 
@@ -44,6 +56,7 @@ offset_left = 183.0
 offset_top = 50.0
 offset_right = 999.0
 offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("5_50glp")
 theme_override_font_sizes/font_size = 100
 text = "Flopped"
 horizontal_alignment = 1
@@ -61,7 +74,9 @@ offset_right = 62.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "RETRY"
+theme_override_styles/hover = SubResource("StyleBoxTexture_4kpch")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_grg3l")
+theme_override_styles/normal = SubResource("StyleBoxTexture_frkhe")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -78,6 +93,7 @@ script = ExtResource("5_vy5pj")
 layout_mode = 0
 offset_right = 266.0
 offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("8_bmxlf")
 theme_override_font_sizes/font_size = 50
 text = "Distance: 0 M"
 
