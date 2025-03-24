@@ -1,6 +1,7 @@
 extends state
 
-@export var angular = 0.05
+
+@onready var timer: Timer = $"../../Timer"
 @onready var player : CharacterBody2D = get_parent().get_parent()
 @onready var animation_player : AnimationPlayer = get_parent().get_parent().get_node("AnimationPlayer")
 
@@ -25,6 +26,9 @@ func Physic_Update(_delat:float):
 	player.velocity.x = player.speed
 	player.move_and_slide()
 	if Input.is_action_pressed("JUMP"):
-		player.rotation += angular
-		#if super trigger:
-			#player.SUPER = true
+		player.rotation += player.angular
+		#print(player.rotation_degrees)
+		if int(player.rotation_degrees) <= -170 and !player.SUPER:
+			print("SUPER")
+			timer.start()
+			player.SUPER = true

@@ -4,4 +4,5 @@ extends Area2D
 
 func _on_area_entered(area: Area2D) -> void:
 	player.IS_ALIVE = false
+	player.rotation = 0
 	print(player.IS_ALIVE)
