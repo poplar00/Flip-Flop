@@ -7,11 +7,15 @@ var score = 0
 
 
 func _process(delta: float) -> void:
-	score += 1.5 * delta
+	if player.SUPER:
+		score += 3 * delta
+	else:
+		score += 1.5 * delta
 	if player.is_on_floor():
-		score += 6.5 * delta
 		if player.SUPER:
-			score *= 3
+			score += 10 * delta
+		else:
+			score += 5 * delta
 	if player.IS_ALIVE != true:
 		await get_tree().create_timer(1).timeout
 		ui.hide()
