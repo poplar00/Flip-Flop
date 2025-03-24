@@ -33,11 +33,11 @@ position_smoothing_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1500, 0)
+motion_mirroring = Vector2(1700, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-182, -230)
-scale = Vector2(0.986979, 1.29557)
+position = Vector2(0, -210)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_jw32o")
 centered = false
 
@@ -95,6 +95,6 @@ offset_right = 266.0
 offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("8_bmxlf")
 theme_override_font_sizes/font_size = 50
-text = "Distance: 0 M"
+text = "Score: 0 M"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]

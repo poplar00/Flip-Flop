@@ -7,9 +7,12 @@ var score = 0
 
 
 func _process(delta: float) -> void:
-	if player.IS_ALIVE == true:
-		score += 0.1
-	else:
+	score += 1.5 * delta
+	if player.is_on_floor():
+		score += 6.5 * delta
+		if player.SUPER:
+			score *= 3
+	if player.IS_ALIVE != true:
 		await get_tree().create_timer(1).timeout
 		ui.hide()
-	score_label.text = "Distance: %d M" % score
+	score_label.text = "Score: %d M" % score

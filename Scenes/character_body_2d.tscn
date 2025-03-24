@@ -160,8 +160,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbyq6"]
-size = Vector2(12.1667, 8.41669)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6d06k"]
+radius = 6.00669
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t38ji"]
 size = Vector2(59, 59)
@@ -300,17 +300,18 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_88kja")
+jump_force = -600.0
 
 [node name="Anim2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.895, 1.895)
 sprite_frames = SubResource("SpriteFrames_3d168")
-animation = &"dies"
+animation = &"running"
 autoplay = "running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 30)
 scale = Vector2(6, 5)
-shape = SubResource("RectangleShape2D_gbyq6")
+shape = SubResource("CircleShape2D_6d06k")
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_it8n0")
@@ -348,4 +349,10 @@ volume_db = -5.0
 stream = ExtResource("10_6d06k")
 volume_db = 10.0
 
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 40.641
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
