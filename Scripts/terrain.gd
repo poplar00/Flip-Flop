@@ -5,7 +5,8 @@ extends Node
 
 var screensize
 var terrain = Array()
-var texture = preload("res://asset/Ground_injek.png")
+#var texture = preload("res://asset/Ground_injek.png")
+var texture = preload("res://asset/Background.png")
 
 func _ready() -> void:
 	randomize()
@@ -49,5 +50,6 @@ func add_hills():
 
 	var ground_polygon = Polygon2D.new()             
 	ground_polygon.polygon = poly                    
-	ground_polygon.texture = texture                 
+	#ground_polygon.texture = texture
+	ground_polygon.color = "7c1e58"      
 	add_child(ground_polygon)
