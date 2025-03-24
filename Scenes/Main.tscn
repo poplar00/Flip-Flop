@@ -21,7 +21,8 @@ texture = ExtResource("6_vy5pj")
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_pbw6q")]
-position = Vector2(571, 238)
+position = Vector2(563, 200)
+platform_on_leave = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 process_callback = 0
@@ -32,7 +33,7 @@ position_smoothing_enabled = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1700, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
